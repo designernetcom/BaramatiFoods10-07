@@ -295,5 +295,8 @@ window.addEventListener('scroll', function() {
 
 
 
-
+// Add tooltip to all clickable banners
+document.querySelectorAll('.banner-plain').forEach(banner => {
+	banner.title = "Click to view product";
+  });
 
