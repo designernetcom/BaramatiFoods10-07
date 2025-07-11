@@ -5055,3 +5055,163 @@ form.invalid span.wpcf7-not-valid-tip {
     text-align: center;
     padding: 40px;
 }
+
+
+
+
+
+/* ---------------- Fix Mobile Navbar button ------------- */
+
+
+
+
+        
+
+        /* Mobile secondary nav */
+        .mobile-secondary-nav-bar {
+            position: fixed;
+            top: 73px;
+            left: 0;
+            right: 0;
+            height: 55px;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transform: translateY(-100%);
+            opacity: 0;
+            visibility: hidden;
+            transition: all .3s ease;
+            /* z-index: 999 */
+        }
+
+        .mobile-secondary-nav-bar.show {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible
+        }
+
+        .mobile-products-dropdown-container,
+        .mobile-shop-now-btn {
+            width: 48%
+        }
+
+        .mobile-products-dropdown-trigger {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #231069;
+            background: #fff;
+            border: 2px solid #231069;
+            border-radius: 8px;
+            padding: 6px 10px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mobile-products-dropdown-arrow {
+            font-size: 12px;
+            transition: .3s
+        }
+
+        .mobile-products-dropdown-arrow.rotated {
+            transform: rotate(180deg)
+        }
+
+        .mobile-products-dropdown-menu {
+            position: absolute;
+            top: calc(100% + 5px);
+            left: 0;
+            right: 0;
+            background: #fff;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-8px);
+            transition: all .2s ease;
+            /* z-index: 1000; */
+        }
+
+        .mobile-products-dropdown-menu.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .mobile-products-dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 10px;
+            font-size: 15px;
+            color: #000000;
+            text-decoration: none;
+            transition: background .2s;
+        }
+
+        .mobile-products-dropdown-item:hover {
+            background: #f8f9fa;
+            color: #231069;
+        }
+
+        .mobile-shop-now-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #fff;
+            background: #e1000b;;
+            border: none;
+            border-radius: 8px;
+            padding: 6px 10px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mobile-shop-now-btn:hover {
+            background: linear-gradient(135deg, #e55a2b, #e08419);
+        }
+
+        .mobile-dropdown-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            /* background: rgba(0, 0, 0, 0.1); */
+            opacity: 0;
+            visibility: hidden;
+            transition: all .3s ease;
+            /* z-index: 998; */
+        }
+
+        .mobile-dropdown-overlay.active {
+            opacity: 1;
+            visibility: visible
+        }
+
+        /* Show hamburger & mobile nav only on small screens */
+        @media (max-width: 768px) {
+            .main-navbar .menu-icon { display:block }
+            .mobile-secondary-nav-bar { display:flex }
+          }
+      
+          @media (min-width: 769px) {
+            .mobile-secondary-nav-bar,
+            .mobile-dropdown-overlay {
+              display:none !important;
+              visibility:hidden !important;
+            }
+          }
