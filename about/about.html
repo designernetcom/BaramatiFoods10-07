@@ -232,12 +232,88 @@
 									<a href="shop/index.html">Shop Now <i class="fas fa-shopping-cart"></i> </a>
 								</div> -->
 							</div>
+
+
+
+
+
+
+							<!-- ---------------------------------------- mobile new fix button navbar ------------------------------------------ -->
+
+							<!-- Mobile secondary nav -->
+							<div class="mobile-secondary-nav-bar" id="mobileSecondaryNav">
+								<div class="mobile-products-dropdown-container">
+									<button class="mobile-products-dropdown-trigger" id="mobileProductsDropdown">
+										<i class="fas fa-gift"></i> Products
+										<i class="fas fa-chevron-down mobile-products-dropdown-arrow"></i>
+									</button>
+									<div class="mobile-products-dropdown-menu" id="mobileProductsMenu">
+										<a href="../Products/Fruit Freeze.html" class="mobile-products-dropdown-item">
+											Fruit Freeze</a>
+										<a href="../Products/imaliChulbuli.html" class="mobile-products-dropdown-item">
+											Imali Chulbuli</a>
+
+										<a href="../Products/jelfiee.html" class="mobile-products-dropdown-item">
+											Jelfiee</a>
+										<a href="../Products/SweetheratPop.html" class="mobile-products-dropdown-item">
+											Sweet Heart Pops</a>
+
+									</div>
+								</div>
+
+								<a href="../shop.html" class="mobile-shop-now-btn">
+									<i class="fas fa-shopping-cart"></i> Order Now
+								</a>
+
+							</div>
+
+							<!-- Overlay -->
+							<div class="mobile-dropdown-overlay" id="mobileDropdownOverlay"></div>
+
+							<!-- Scripts -->
+							<script>
+								const msNav = document.getElementById('mobileSecondaryNav'),
+									trigger = document.getElementById('mobileProductsDropdown'),
+									menu = document.getElementById('mobileProductsMenu'),
+									overlay = document.getElementById('mobileDropdownOverlay'),
+									arrow = trigger.querySelector('.mobile-products-dropdown-arrow');
+								let scrollT = 80;
+
+								window.addEventListener('scroll', () => {
+									if (window.scrollY > scrollT) msNav.classList.add('show');
+									else { msNav.classList.remove('show'); closeDropdown(); }
+								});
+
+								trigger.addEventListener('click', e => {
+									e.stopPropagation(); toggleDropdown();
+								});
+								overlay.addEventListener('click', closeDropdown);
+								document.addEventListener('click', e => {
+									if (!e.target.closest('.mobile-products-dropdown-container')) closeDropdown();
+								});
+
+								function toggleDropdown() {
+									menu.classList.toggle('active');
+									overlay.classList.toggle('active');
+									arrow.classList.toggle('rotated');
+								}
+								function closeDropdown() {
+									menu.classList.remove('active');
+									overlay.classList.remove('active');
+									arrow.classList.remove('rotated');
+								}
+							</script>
+
+							<!-- ---------------------------------------- mobile new fix button navbar ------------------------------------------ -->
+
+
+
 						</div>
 						<!-- <div class="menuobjectleaf">
 							<img class="lazyload" data-src="OurImages/OtherImage/PEANUTS.png" alt="Menu Object">
 						</div> -->
 
-<!-- --------- navbar fruit ------- -->
+						<!-- --------- navbar fruit ------- -->
 						<!-- <div class="menuobjectbottom">
 							<img class="lazyload" data-src="OurImages/OtherImage/mixfruit-2.png" alt="Menu Object">
 						</div> -->
@@ -382,8 +458,7 @@
 									<div class="container position-relative">
 
 										<div class="frmleaftop position-absolute wow fadeInLeft">
-											<img src="../OurImages/OtherImage/straweberry.png" alt="Laef Left" 
-											style="    
+											<img src="../OurImages/OtherImage/straweberry.png" alt="Laef Left" style="    
 												height: 250px;
 												-webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
 
@@ -468,90 +543,68 @@
 										</div>
 										<div class="infrastructureslider">
 											<div>
-												<a data-fancybox="gallery"
-													href="../OurImages/Slider/1.jpg">
-													<img src="../OurImages/Slider/1.jpg"
-														alt="Infrastructure" />
+												<a data-fancybox="gallery" href="../OurImages/Slider/1.jpg">
+													<img src="../OurImages/Slider/1.jpg" alt="Infrastructure" />
 												</a>
 											</div>
 
 											<div>
-												<a data-fancybox="gallery"
-													href="../OurImages/Slider/2.jpg">
-													<img src="../OurImages/Slider/2.jpg"
-														alt="Infrastructure" />
+												<a data-fancybox="gallery" href="../OurImages/Slider/2.jpg">
+													<img src="../OurImages/Slider/2.jpg" alt="Infrastructure" />
 												</a>
 											</div>
 
 											<div>
-												<a data-fancybox="gallery"
-													href="../OurImages/Slider/4.jpg">
-													<img src="../OurImages/Slider/4.jpg"
-														alt="Infrastructure" />
+												<a data-fancybox="gallery" href="../OurImages/Slider/4.jpg">
+													<img src="../OurImages/Slider/4.jpg" alt="Infrastructure" />
 												</a>
 											</div>
 
 											<div>
-												<a data-fancybox="gallery"
-													href="../OurImages/Slider/5.jpg">
-													<img src="../OurImages/Slider/5.jpg"
-														alt="Infrastructure" />
+												<a data-fancybox="gallery" href="../OurImages/Slider/5.jpg">
+													<img src="../OurImages/Slider/5.jpg" alt="Infrastructure" />
 												</a>
 											</div>
 
 											<div>
-												<a data-fancybox="gallery"
-													href="../OurImages/Slider/6.jpg">
-													<img src="../OurImages/Slider/6.jpg"
-														alt="Infrastructure" />
+												<a data-fancybox="gallery" href="../OurImages/Slider/6.jpg">
+													<img src="../OurImages/Slider/6.jpg" alt="Infrastructure" />
 												</a>
 											</div>
 
 											<div>
-												<a data-fancybox="gallery"
-													href="../OurImages/Slider/7.jpg">
-													<img src="../OurImages/Slider/7.jpg"
-														alt="Infrastructure" />
+												<a data-fancybox="gallery" href="../OurImages/Slider/7.jpg">
+													<img src="../OurImages/Slider/7.jpg" alt="Infrastructure" />
 												</a>
 											</div>
 
 											<div>
-												<a data-fancybox="gallery"
-													href="../OurImages/Slider/8.jpg">
-													<img src="../OurImages/Slider/8.jpg"
-														alt="Infrastructure" />
+												<a data-fancybox="gallery" href="../OurImages/Slider/8.jpg">
+													<img src="../OurImages/Slider/8.jpg" alt="Infrastructure" />
 												</a>
 											</div>
 
 											<div>
-												<a data-fancybox="gallery"
-													href="../OurImages/Slider/9.jpg">
-													<img src="../OurImages/Slider/9.jpg"
-														alt="Infrastructure" />
+												<a data-fancybox="gallery" href="../OurImages/Slider/9.jpg">
+													<img src="../OurImages/Slider/9.jpg" alt="Infrastructure" />
 												</a>
 											</div>
 
 											<div>
-												<a data-fancybox="gallery"
-													href="../OurImages/Slider/10.jpg">
-													<img src="../OurImages/Slider/10.jpg"
-														alt="Infrastructure" />
+												<a data-fancybox="gallery" href="../OurImages/Slider/10.jpg">
+													<img src="../OurImages/Slider/10.jpg" alt="Infrastructure" />
 												</a>
 											</div>
 
 											<div>
-												<a data-fancybox="gallery"
-													href="../OurImages/Slider/11.jpg">
-													<img src="../OurImages/Slider/11.jpg"
-														alt="Infrastructure" />
+												<a data-fancybox="gallery" href="../OurImages/Slider/11.jpg">
+													<img src="../OurImages/Slider/11.jpg" alt="Infrastructure" />
 												</a>
 											</div>
 
 											<div>
-												<a data-fancybox="gallery"
-													href="../OurImages/Slider/12.jpg">
-													<img src="../OurImages/Slider/12.png"
-														alt="Infrastructure" />
+												<a data-fancybox="gallery" href="../OurImages/Slider/12.jpg">
+													<img src="../OurImages/Slider/12.png" alt="Infrastructure" />
 												</a>
 											</div>
 
@@ -603,7 +656,8 @@
 								</div>
 							</section> -->
 
-							<section class="w-100 d-flex flex-wrap aboutproductrow position-relative " style="padding: 30px !important;">
+							<section class="w-100 d-flex flex-wrap aboutproductrow position-relative "
+								style="padding: 30px !important;">
 
 								<!-- <div class="frmleaftop position-absolute wow fadeInLeft">
 									<img data-src="https://anandnamkeen.com/ast/themes/anand-namkeen/images/bottom-leaf.webp"
@@ -809,7 +863,7 @@
 					</div>
 				</div>
 			</div>
-			
+
 		</main>
 
 		<footer class="footermain w-100 d-inline-block">
@@ -835,7 +889,8 @@
 
 									<div class="instabtncol">
 										<div class="lgtitle60">Get in Touch <span>We’re Just a Click Away!</span></div>
-										<a target="_blank" href="../contact/contact.html" class="btn-theme btn-theme-white">Contact Us</a>
+										<a target="_blank" href="../contact/contact.html"
+											class="btn-theme btn-theme-white">Contact Us</a>
 									</div>
 								</div>
 
@@ -1083,48 +1138,49 @@
 
 
 
-<!-- --------- Shop now fix button start ----------------- -->
+	<!-- --------- Shop now fix button start ----------------- -->
 
- <!-- Floating Shop Button -->
- <div class="sweet-shop-container">
-	<div class="sweet-shop-float">
-		<a href="#" class="sweet-shop-btn" onclick="handleShopClick(event)">
-			<div class="sweet-sparkle"></div>
-			<div class="sweet-sparkle"></div>
-			<div class="sweet-sparkle"></div>
-			<svg class="sweet-cart-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-				<path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12L8.1 13h7.45c.75 0 1.41-.41 1.75-1.03L21.7 4H5.21l-.94-2H1zm16 16c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
-			</svg>
-		</a>
-		
-		<div class="sweet-shop-label">Shop Sweet Treats</div>
+	<!-- Floating Shop Button -->
+	<div class="sweet-shop-container">
+		<div class="sweet-shop-float">
+			<a href="#" class="sweet-shop-btn" onclick="handleShopClick(event)">
+				<div class="sweet-sparkle"></div>
+				<div class="sweet-sparkle"></div>
+				<div class="sweet-sparkle"></div>
+				<svg class="sweet-cart-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12L8.1 13h7.45c.75 0 1.41-.41 1.75-1.03L21.7 4H5.21l-.94-2H1zm16 16c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+				</svg>
+			</a>
+
+			<div class="sweet-shop-label">Shop Sweet Treats</div>
+		</div>
 	</div>
-</div>
 
-<script>
-	function handleShopClick(event) {
-		event.preventDefault();
-		
-		// Create a sweet ripple effect
-		const button = event.currentTarget;
-		const ripple = document.createElement('div');
-		ripple.style.position = 'absolute';
-		ripple.style.width = '120px';
-		ripple.style.height = '120px';
-		ripple.style.background = 'radial-gradient(circle, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2))';
-		ripple.style.borderRadius = '50%';
-		ripple.style.top = '50%';
-		ripple.style.left = '50%';
-		ripple.style.transform = 'translate(-50%, -50%) scale(0)';
-		ripple.style.animation = 'rippleEffect 0.8s ease-out';
-		ripple.style.pointerEvents = 'none';
-		ripple.style.zIndex = '10';
-		
-		button.appendChild(ripple);
-		
-		// Add ripple animation
-		const style = document.createElement('style');
-		style.textContent = `
+	<script>
+		function handleShopClick(event) {
+			event.preventDefault();
+
+			// Create a sweet ripple effect
+			const button = event.currentTarget;
+			const ripple = document.createElement('div');
+			ripple.style.position = 'absolute';
+			ripple.style.width = '120px';
+			ripple.style.height = '120px';
+			ripple.style.background = 'radial-gradient(circle, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2))';
+			ripple.style.borderRadius = '50%';
+			ripple.style.top = '50%';
+			ripple.style.left = '50%';
+			ripple.style.transform = 'translate(-50%, -50%) scale(0)';
+			ripple.style.animation = 'rippleEffect 0.8s ease-out';
+			ripple.style.pointerEvents = 'none';
+			ripple.style.zIndex = '10';
+
+			button.appendChild(ripple);
+
+			// Add ripple animation
+			const style = document.createElement('style');
+			style.textContent = `
 			@keyframes rippleEffect {
 				to {
 					transform: translate(-50%, -50%) scale(2.5);
@@ -1132,47 +1188,47 @@
 				}
 			}
 		`;
-		document.head.appendChild(style);
-		
-		setTimeout(() => {
-			ripple.remove();
-			style.remove();
-		}, 800);
-		
-		// Replace with your actual shop URL
-		window.location.href = '../shop.html';
-		
-		// Example: window.location.href = '/shop';
-	}
+			document.head.appendChild(style);
 
-	// Add some interactive sparkle effects
-	const button = document.querySelector('.sweet-shop-btn');
-	const sparkles = document.querySelectorAll('.sweet-sparkle');
-	
-	button.addEventListener('mouseenter', function() {
-		sparkles.forEach((sparkle, index) => {
-			sparkle.style.animationDelay = `${index * 0.15}s`;
-			sparkle.style.animationDuration = '0.8s';
+			setTimeout(() => {
+				ripple.remove();
+				style.remove();
+			}, 800);
+
+			// Replace with your actual shop URL
+			window.location.href = '../shop.html';
+
+			// Example: window.location.href = '/shop';
+		}
+
+		// Add some interactive sparkle effects
+		const button = document.querySelector('.sweet-shop-btn');
+		const sparkles = document.querySelectorAll('.sweet-sparkle');
+
+		button.addEventListener('mouseenter', function () {
+			sparkles.forEach((sparkle, index) => {
+				sparkle.style.animationDelay = `${index * 0.15}s`;
+				sparkle.style.animationDuration = '0.8s';
+			});
 		});
-	});
-	
-	button.addEventListener('mouseleave', function() {
-		sparkles.forEach((sparkle, index) => {
-			sparkle.style.animationDelay = `${index * 0.7}s`;
-			sparkle.style.animationDuration = '2s';
+
+		button.addEventListener('mouseleave', function () {
+			sparkles.forEach((sparkle, index) => {
+				sparkle.style.animationDelay = `${index * 0.7}s`;
+				sparkle.style.animationDuration = '2s';
+			});
 		});
-	});
 
-	// Add some candy-themed interactions
-	button.addEventListener('click', function() {
-		this.style.transform = 'scale(0.95)';
-		setTimeout(() => {
-			this.style.transform = '';
-		}, 150);
-	});
-</script>
+		// Add some candy-themed interactions
+		button.addEventListener('click', function () {
+			this.style.transform = 'scale(0.95)';
+			setTimeout(() => {
+				this.style.transform = '';
+			}, 150);
+		});
+	</script>
 
-<!-- --------- Shop now fix button sEnd ----------------- -->
+	<!-- --------- Shop now fix button sEnd ----------------- -->
 
 
 
