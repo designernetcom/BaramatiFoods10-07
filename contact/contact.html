@@ -384,7 +384,73 @@
                                             </div>
                                         </div>
                                     </div>
+	<!-- ---------------------------------------- mobile new fix button navbar ------------------------------------------ -->
 
+							<!-- Mobile secondary nav -->
+							<div class="mobile-secondary-nav-bar" id="mobileSecondaryNav">
+								<div class="mobile-products-dropdown-container">
+									<button class="mobile-products-dropdown-trigger" id="mobileProductsDropdown">
+										<i class="fas fa-gift"></i> Products
+										<i class="fas fa-chevron-down mobile-products-dropdown-arrow"></i>
+									</button>
+									<div class="mobile-products-dropdown-menu" id="mobileProductsMenu">
+										<a href="../Products/Fruit Freeze.html" class="mobile-products-dropdown-item">
+											Fruit Freeze</a>
+										<a href="../Products/imaliChulbuli.html" class="mobile-products-dropdown-item">
+											Imali Chulbuli</a>
+
+										<a href="../Products/jelfiee.html" class="mobile-products-dropdown-item">
+											Jelfiee</a>
+										<a href="../Products/SweetheratPop.html" class="mobile-products-dropdown-item">
+											Sweet Heart Pops</a>
+
+									</div>
+								</div>
+
+								<a href="../shop.html" class="mobile-shop-now-btn">
+									<i class="fas fa-shopping-cart"></i> Order Now
+								</a>
+
+							</div>
+
+							<!-- Overlay -->
+							<div class="mobile-dropdown-overlay" id="mobileDropdownOverlay"></div>
+
+							<!-- Scripts -->
+							<script>
+								const msNav = document.getElementById('mobileSecondaryNav'),
+									trigger = document.getElementById('mobileProductsDropdown'),
+									menu = document.getElementById('mobileProductsMenu'),
+									overlay = document.getElementById('mobileDropdownOverlay'),
+									arrow = trigger.querySelector('.mobile-products-dropdown-arrow');
+								let scrollT = 80;
+
+								window.addEventListener('scroll', () => {
+									if (window.scrollY > scrollT) msNav.classList.add('show');
+									else { msNav.classList.remove('show'); closeDropdown(); }
+								});
+
+								trigger.addEventListener('click', e => {
+									e.stopPropagation(); toggleDropdown();
+								});
+								overlay.addEventListener('click', closeDropdown);
+								document.addEventListener('click', e => {
+									if (!e.target.closest('.mobile-products-dropdown-container')) closeDropdown();
+								});
+
+								function toggleDropdown() {
+									menu.classList.toggle('active');
+									overlay.classList.toggle('active');
+									arrow.classList.toggle('rotated');
+								}
+								function closeDropdown() {
+									menu.classList.remove('active');
+									overlay.classList.remove('active');
+									arrow.classList.remove('rotated');
+								}
+							</script>
+
+							<!-- ---------------------------------------- mobile new fix button navbar ------------------------------------------ -->
                                 </div>
 
                                 <div class="divider-yellow-top position-relative">
