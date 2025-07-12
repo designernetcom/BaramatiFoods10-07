@@ -255,40 +255,7 @@
 							<!-- Overlay -->
 							<div class="mobile-dropdown-overlay" id="mobileDropdownOverlay"></div>
 
-							<!-- Scripts -->
-							<script>
-								const msNav = document.getElementById('mobileSecondaryNav'),
-									trigger = document.getElementById('mobileProductsDropdown'),
-									menu = document.getElementById('mobileProductsMenu'),
-									overlay = document.getElementById('mobileDropdownOverlay'),
-									arrow = trigger.querySelector('.mobile-products-dropdown-arrow');
-								let scrollT = 80;
-
-								window.addEventListener('scroll', () => {
-									if (window.scrollY > scrollT) msNav.classList.add('show');
-									else { msNav.classList.remove('show'); closeDropdown(); }
-								});
-
-								trigger.addEventListener('click', e => {
-									e.stopPropagation(); toggleDropdown();
-								});
-								overlay.addEventListener('click', closeDropdown);
-								document.addEventListener('click', e => {
-									if (!e.target.closest('.mobile-products-dropdown-container')) closeDropdown();
-								});
-
-								function toggleDropdown() {
-									menu.classList.toggle('active');
-									overlay.classList.toggle('active');
-									arrow.classList.toggle('rotated');
-								}
-								function closeDropdown() {
-									menu.classList.remove('active');
-									overlay.classList.remove('active');
-									arrow.classList.remove('rotated');
-								}
-							</script>
-
+						
 							<!-- ---------------------------------------- mobile new fix button navbar ------------------------------------------ -->
 
 						</div>
