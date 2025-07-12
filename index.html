@@ -243,10 +243,7 @@
 								</div> -->
 							</div>
 
-
-
-
-							<!-- ---------------------------------------- mobile new fix button navbar ------------------------------------------ -->
+		<!-- ---------------------------------------- mobile new fix button navbar ------------------------------------------ -->
 
 							<!-- Mobile secondary nav -->
 							<div class="mobile-secondary-nav-bar" id="mobileSecondaryNav">
@@ -257,7 +254,7 @@
 									</button>
 									<div class="mobile-products-dropdown-menu" id="mobileProductsMenu">
 										<a href="./Products/Fruit Freeze.html" class="mobile-products-dropdown-item">
-												Fruit Freeze</a>
+											Fruit Freeze</a>
 										<a href="./Products/imaliChulbuli.html" class="mobile-products-dropdown-item">
 											Imali Chulbuli</a>
 
@@ -278,47 +275,7 @@
 							<!-- Overlay -->
 							<div class="mobile-dropdown-overlay" id="mobileDropdownOverlay"></div>
 
-							<!-- Scripts -->
-							<script>
-								const msNav = document.getElementById('mobileSecondaryNav'),
-									trigger = document.getElementById('mobileProductsDropdown'),
-									menu = document.getElementById('mobileProductsMenu'),
-									overlay = document.getElementById('mobileDropdownOverlay'),
-									arrow = trigger.querySelector('.mobile-products-dropdown-arrow');
-								let scrollT = 80;
-
-								window.addEventListener('scroll', () => {
-									if (window.scrollY > scrollT) msNav.classList.add('show');
-									else { msNav.classList.remove('show'); closeDropdown(); }
-								});
-
-								trigger.addEventListener('click', e => {
-									e.stopPropagation(); toggleDropdown();
-								});
-								overlay.addEventListener('click', closeDropdown);
-								document.addEventListener('click', e => {
-									if (!e.target.closest('.mobile-products-dropdown-container')) closeDropdown();
-								});
-
-								function toggleDropdown() {
-									menu.classList.toggle('active');
-									overlay.classList.toggle('active');
-									arrow.classList.toggle('rotated');
-								}
-								function closeDropdown() {
-									menu.classList.remove('active');
-									overlay.classList.remove('active');
-									arrow.classList.remove('rotated');
-								}
-							</script>
-
-							<!-- ---------------------------------------- mobile new fix button navbar ------------------------------------------ -->
-
-
-
-
-
-
+			<!-- ---------------------------------------- mobile new fix button navbar end ------------------------------------------ -->
 
 						</div>
 						<!-- <div class="menuobjectleaf">
@@ -337,6 +294,7 @@
 				<div class="wpb_column vc_column_container vc_col-sm-12">
 					<div class="vc_column-inner">
 						<div class="wpb_wrapper">
+
 							<section class="full-slider ">
 
 								<div id="carouselExampleControls" class="carousel slide carousel-fade">
@@ -1606,8 +1564,6 @@ a picnic" />
 	</script>
 
 	<!-- --------- Shop now fix button sEnd ----------------- -->
-
-
 
 
 
