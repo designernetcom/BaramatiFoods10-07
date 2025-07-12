@@ -300,3 +300,67 @@ document.querySelectorAll('.banner-plain').forEach(banner => {
 	banner.title = "Click to view product";
   });
 
+
+// -------------------------- mobile fix navbar button --------------------
+
+
+
+const msNav = document.getElementById('mobileSecondaryNav'),
+	trigger = document.getElementById('mobileProductsDropdown'),
+	menu = document.getElementById('mobileProductsMenu'),
+	overlay = document.getElementById('mobileDropdownOverlay'),
+	arrow = trigger.querySelector('.mobile-products-dropdown-arrow'),
+	toggleBtn = document.querySelector('.navbartoggle.circleiconbtn'),
+	closeBtn = document.querySelector('.headerclose');
+
+let scrollT = 80;
+let manualHide = false; // tracks if user manually hid the nav bar
+
+// Scroll logic - only show if not manually hidden
+window.addEventListener('scroll', () => {
+	if (!manualHide && window.scrollY > scrollT) {
+		msNav.classList.add('show');
+	} else if (!manualHide) {
+		msNav.classList.remove('show');
+		closeDropdown();
+	}
+});
+
+// Toggle dropdown menu inside the bar
+trigger.addEventListener('click', e => {
+	e.stopPropagation();
+	toggleDropdown();
+});
+
+overlay.addEventListener('click', closeDropdown);
+
+document.addEventListener('click', e => {
+	if (!e.target.closest('.mobile-products-dropdown-container')) closeDropdown();
+});
+
+function toggleDropdown() {
+	menu.classList.toggle('active');
+	overlay.classList.toggle('active');
+	arrow.classList.toggle('rotated');
+}
+
+function closeDropdown() {
+	menu.classList.remove('active');
+	overlay.classList.remove('active');
+	arrow.classList.remove('rotated');
+}
+
+// ✅ Hide secondary nav when sidebar (toggle) button clicked
+toggleBtn?.addEventListener('click', () => {
+	msNav.classList.remove('show');
+	manualHide = true;
+});
+
+// ✅ Show secondary nav again when sidebar is closed
+closeBtn?.addEventListener('click', () => {
+	if (window.scrollY > scrollT) {
+		msNav.classList.add('show');
+	}
+	manualHide = false;
+});
+
